@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+.footer-cta {
+    h2 {
+        font-family: $font-heading;
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $primary-text;
+        margin-bottom: $spacing-md;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (max-width: $breakpoint-md) {
+            font-size: $font-size-lg;
+        }
+    }
+
+    p {
+        font-size: $font-size-base;
+        color: $secondary-text;
+        margin: 0;
+
+        a {
+            color: $orange;
+            text-decoration: none;
+            font-weight: $font-weight-medium;
+            transition: color $transition-fast;
+
+            &:hover {
+                color: darken($orange, 10%);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// CTA Section (middle buttons)
+.cta-section {
+    padding-top: 0;
+}
+
+.cta-section__buttons {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+.use-cases__header {
+    max-width: 700px;
+    margin: 0 auto $spacing-3xl;
+
+    p {
+        font-size: $font-size-lg;
+        color: $secondary-text;
+        line-height: $line-height-relaxed;
+        margin: 0;
+
+        @media (max-width: $breakpoint-md) {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+.use-cases__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.use-case-card {
+    padding: $spacing-lg;
+}
+
+.use-case-card__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $orange;
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.use-case-card__title {
+    font-family: $font-heading;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary-text;
+    margin-bottom: $spacing-sm;
+}
+
+.use-case-card__desc {
+    font-size: $font-size-sm;
+    color: $secondary-text;
+    line-height: $line-height-relaxed;
+    margin: 0;
+}

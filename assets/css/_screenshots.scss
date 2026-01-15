@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+.screenshots {
+  padding: 100px $section-padding-desktop;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $white;
+}
+
+.screenshots__container {
+  max-width: $container-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.screenshots__image {
+  max-width: 455px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: $breakpoint-lg) {
+  .screenshots {
+    padding: 80px $section-padding-tablet;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .screenshots {
+    padding: 60px $section-padding-mobile;
+  }
+  .screenshots__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,93 @@
+@use 'variables' as *;
+
+.hero {
+  padding: 50px 16px 100px;
+  background-color: transparent;
+}
+
+.hero .container-narrow {
+  max-width: $container-narrow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 0;
+  min-height: 62px;
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 48px;
+    font-weight: $font-weight-normal;
+    color: $primary-text;
+    margin: 0;
+    line-height: 1;
+    padding-top: 3px;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  min-width: 42px;
+  height: 22px;
+  background-color: $badge-bg;
+  color: $white;
+  font-family: $font-badge;
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  border-radius: 11px;
+  letter-spacing: 0;
+  margin-top: 0;
+}
+
+.hero__subtitle {
+  font-family: $font-body;
+  font-size: 20px;
+  font-weight: $font-weight-normal;
+  color: $secondary-text;
+  line-height: 28px;
+  margin: 0;
+  max-width: 626px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: $breakpoint-md) {
+  .hero__title h1 {
+    font-size: 36px;
+  }
+  .hero__subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 290px;
+  }
+}

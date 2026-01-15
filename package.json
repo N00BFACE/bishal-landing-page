@@ -1,0 +1,14 @@
+{
+    "name": "bishal-landing-page",
+    "version": "1.0.0",
+    "description": "Bishal Landing Page",
+    "main": "index.js",
+    "scripts": {
+        "watch": "sass --watch assets/css/styles.scss:assets/css/styles.css"
+    },
+    "author": "Bishal Shrestha",
+    "license": "ISC",
+    "dependencies": {
+        "sass": "^1.69.5"
+    }
+}
