@@ -15,12 +15,22 @@
         return;
     }
 
+    // Check if running from file:// protocol (YouTube embeds don't work locally)
+    const isFileProtocol = window.location.protocol === 'file:';
+
     // Open modal and load video
     function openModal() {
         const videoId = playButton.getAttribute('data-video-id');
-        if (videoId) {
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        if (!videoId) return;
+
+        // YouTube embeds don't work with file:// protocol due to security restrictions
+        // Open video in new tab instead
+        if (isFileProtocol) {
+            window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+            return;
         }
+
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
         modal.classList.add('is-active');
         document.body.style.overflow = 'hidden'; // Prevent scroll
     }
